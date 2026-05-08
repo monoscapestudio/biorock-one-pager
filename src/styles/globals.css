@@ -1,0 +1,33 @@
+.nav-flip-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.nav-flip-btn .nav-flip-back {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.nav-flip-btn .nav-flip-front {
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nav-flip-btn:hover .nav-flip-front {
+  transform: translateY(-100%);
+}
+
+.nav-flip-btn::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nav-flip-btn:hover::after {
+  transform: translateY(-100%);
+}
