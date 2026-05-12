@@ -82,7 +82,7 @@ export default function App() {
         className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F8]/80 backdrop-blur-md transition-transform duration-500"
         style={{ transform: headerVisible ? "translateY(0)" : "translateY(-100%)" }}
       >
-        <div className="max-w-[1920px] mx-auto px-[8.33vw] h-[72px] md:h-[100px] flex items-center justify-between">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw] h-[72px] md:h-[100px] flex items-center justify-between">
           {/* Logo Mark */}
           <div className="w-[32px] h-[36px] relative">
             <svg className="w-full h-full" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,8 +144,8 @@ export default function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full min-h-[600px] md:min-h-[700px] lg:h-[973px] bg-[#F9F9F8]" style={{ overflow: "clip", contain: "paint layout" }}>
-        <div className="max-w-[1920px] mx-auto relative h-full">
+      <section className="relative w-full min-h-[600px] md:min-h-[700px] lg:h-[973px] 2xl:h-[1100px] 3xl:h-[1400px] bg-[#F9F9F8]" style={{ overflow: "clip", contain: "paint layout" }}>
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto relative h-full">
           {/* Vertical Green Line */}
           <div className="absolute left-[0] top-[195px] w-[10px] h-[663px] bg-[#ADD54D] hidden xl:block"></div>
 
@@ -176,7 +176,7 @@ export default function App() {
           </div>
 
           {/* Hero Image */}
-          <div ref={heroImageRef} className="relative lg:absolute right-auto lg:right-[3.16vw] top-auto lg:top-[127px] w-[300px] md:w-[400px] lg:w-[660px] h-[300px] md:h-[400px] lg:h-[660px] z-0 will-change-transform mx-auto lg:mx-0 mt-[40px] lg:mt-0">
+          <div ref={heroImageRef} className="relative lg:absolute right-auto lg:right-[3.16vw] top-auto lg:top-[127px] 2xl:top-[150px] w-[300px] md:w-[400px] lg:w-[660px] 2xl:w-[800px] 3xl:w-[1000px] h-[300px] md:h-[400px] lg:h-[660px] 2xl:h-[800px] 3xl:h-[1000px] z-0 will-change-transform mx-auto lg:mx-0 mt-[40px] lg:mt-0">
             <img
               src={imgStone}
               alt="Polished Stone"
@@ -188,7 +188,7 @@ export default function App() {
 
       {/* About Section */}
       <section id="about" className="relative w-full bg-black pb-[80px] md:pb-[180px]" style={{ overflow: "clip", contain: "paint layout" }}>
-        <div className="max-w-[1920px] mx-auto relative pt-[60px] md:pt-[120px]">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto relative pt-[60px] md:pt-[120px]">
           
           {/* Top About Text */}
           <div className="flex flex-col lg:flex-row px-[8.33vw] justify-between mt-[30px] md:mt-[50px]">
@@ -196,7 +196,7 @@ export default function App() {
               <p className="font-normal text-[16px] text-[#F9F9F8] tracking-[1.44px] uppercase mb-[40px] md:mb-[370px]">
                 ABOUT
               </p>
-              <p className="font-normal text-[16px] md:text-[18px] text-[#F9F9F8] leading-[25px] md:leading-[27.2px] tracking-[-0.17px] max-w-[784px]">
+              <p className="font-normal text-[16px] md:text-[18px] 2xl:text-[20px] 3xl:text-[24px] text-[#F9F9F8] leading-[25px] md:leading-[27.2px] 2xl:leading-[30px] 3xl:leading-[36px] tracking-[-0.17px] max-w-[784px] 2xl:max-w-[900px] 3xl:max-w-[1100px]">
                 Seed-sized investments into private life science companies developing novel FDA regulated therapeutic drugs. Angel, Seed, Series A, through pre-IPO/M&A. All disease areas, all stages, all therapeutic modalities.
               </p>
             </div>
@@ -244,12 +244,12 @@ export default function App() {
               </div>
 
               {/* Bio Info Block */}
-              <div className="pt-[60px] md:pt-[100px] max-w-[785px]">
+              <div className="pt-[60px] md:pt-[100px] max-w-[785px] 2xl:max-w-[900px] 3xl:max-w-[1100px]">
                 <p className="font-bold text-[#ADD54D] leading-[1.1] tracking-[-1.5px] lg:tracking-[-2.4px] mb-[30px] md:mb-[46px]" style={{ fontSize: "var(--text-display)" }}>
                   Managing Director
                 </p>
                 
-                <div className="font-normal text-[16px] md:text-[18px] text-[#F9F9F8] leading-[25px] md:leading-[27.2px] tracking-[-0.17px] space-y-[20px] md:space-y-[27.2px] mb-[40px]">
+                <div className="font-normal text-[16px] md:text-[18px] 2xl:text-[20px] 3xl:text-[24px] text-[#F9F9F8] leading-[25px] md:leading-[27.2px] 2xl:leading-[30px] 3xl:leading-[36px] tracking-[-0.17px] space-y-[20px] md:space-y-[27.2px] mb-[40px]">
                   <p>
                     Mary is founding managing partner of BioRock Ventures in the Bay Area, CA. Mary began two decades of operating experience as a therapeutics startup founder in Boston. She moved to roles leading negotiations, business and technical evaluations for M&A and licensing deals as well as strategy roles at large and medium pharmaceuticals companies like Johnson & Johnson and Forest (now Allergan|Abbvie) in NYC. She also has served as consulting CBO for several dozen early stage ventures around the world. She began venture investing a decade ago where she helped form and put first money into two new companies which each had IPO exits valued over $1 Billion.
                   </p>
@@ -279,7 +279,7 @@ export default function App() {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="bg-[#F2F2F2] py-[80px] md:py-[160px]" style={{ contain: "paint layout" }}>
-        <div className="max-w-[1920px] mx-auto px-[8.33vw]">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw]">
           <p className="font-normal text-[16px] text-black tracking-[1.44px] uppercase mb-[50px] md:mb-[100px]">
             PORTFOLIO
           </p>
@@ -289,7 +289,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-[30px] md:pb-[50px] border-b border-[#B3ABAB] gap-[12px]">
               <div className="flex items-start gap-0">
                 <div className="w-[3px] h-[40px] bg-[#ADD54D] shrink-0 mt-[3px]"></div>
-                <h3 className="font-bold text-[18px] md:text-[21px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
+                <h3 className="font-bold text-[18px] md:text-[21px] 2xl:text-[26px] 3xl:text-[32px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
                   Fund I
                 </h3>
               </div>
@@ -297,7 +297,7 @@ export default function App() {
                 Stealth Phase 1 MS company
               </p>
             </div>
-            <div className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] flex items-center pl-[17px] md:pl-[34px] py-[30px] md:py-0 transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
+            <div className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] 2xl:h-[300px] 3xl:h-[380px] flex items-center pl-[17px] md:pl-[34px] py-[30px] md:py-0 transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
               <h4 className="font-bold text-black leading-[1.1] tracking-[-1.5px] lg:tracking-[-2.4px] transition-colors duration-500 group-hover:text-[#ADD54D]" style={{ fontSize: "var(--text-display)" }}>
                 Immusoft
               </h4>
@@ -309,7 +309,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-[30px] md:pb-[50px] border-b border-[#B3ABAB] gap-[12px]">
               <div className="flex items-start gap-0">
                 <div className="w-[3px] h-[40px] bg-[#ADD54D] shrink-0 mt-[3px]"></div>
-                <h3 className="font-bold text-[18px] md:text-[21px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
+                <h3 className="font-bold text-[18px] md:text-[21px] 2xl:text-[26px] 3xl:text-[32px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
                   Fund II
                 </h3>
               </div>
@@ -327,7 +327,7 @@ export default function App() {
                 ["Octagon", "Therapeutics"],
                 ["Veana", "Therapeutics"],
               ].map(([line1, line2], i) => (
-                <div key={i} className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] flex items-center pl-[17px] md:pl-[34px] py-[30px] md:py-0 transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
+                <div key={i} className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] 2xl:h-[300px] 3xl:h-[380px] flex items-center pl-[17px] md:pl-[34px] py-[30px] md:py-0 transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
                   <h4 className="font-bold text-black leading-[1.1] tracking-[-1.5px] lg:tracking-[-2.4px] transition-colors duration-500 group-hover:text-[#ADD54D]" style={{ fontSize: "var(--text-display)" }}>
                     {line1}<br />{line2}
                   </h4>
@@ -341,7 +341,7 @@ export default function App() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center pb-[30px] md:pb-[50px] border-b border-[#B3ABAB] gap-[12px]">
               <div className="flex items-start gap-0">
                 <div className="w-[3px] h-[40px] bg-[#ADD54D] shrink-0 mt-[3px]"></div>
-                <h3 className="font-bold text-[18px] md:text-[21px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
+                <h3 className="font-bold text-[18px] md:text-[21px] 2xl:text-[26px] 3xl:text-[32px] text-black leading-[0.88] tracking-[-0.4px] ml-[14px]">
                   Past Investments
                 </h3>
               </div>
@@ -352,7 +352,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] pl-[17px] md:pl-[34px] flex flex-col md:flex-row md:justify-between items-start md:items-center py-[30px] md:py-0 gap-[12px] transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
+            <div className="group cursor-pointer border-b border-[#B3ABAB] h-auto min-h-[120px] md:h-[248px] 2xl:h-[300px] 3xl:h-[380px] pl-[17px] md:pl-[34px] flex flex-col md:flex-row md:justify-between items-start md:items-center py-[30px] md:py-0 gap-[12px] transition-all duration-500 hover:bg-black hover:shadow-[-8.33vw_0_0_0_black,8.33vw_0_0_0_black]">
               <h4 className="font-bold text-black leading-[1.1] tracking-[-1.5px] lg:tracking-[-2.4px] transition-colors duration-500 group-hover:text-[#ADD54D]" style={{ fontSize: "var(--text-display)" }}>
                 Vaxcyte
               </h4>
@@ -366,7 +366,7 @@ export default function App() {
 
       {/* News Section */}
       <section id="news" className="bg-[#F9F9F8] py-[80px] md:py-[160px]" style={{ overflow: "clip", contain: "paint layout" }}>
-        <div className="max-w-[1920px] mx-auto">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto">
           {/* Header row: title left, pagination right */}
           <div className="flex items-center justify-between px-[8.33vw] mb-[50px] md:mb-[100px]">
             <p className="font-normal text-[14px] md:text-[15.6px] text-black tracking-[1.44px] uppercase">
@@ -399,7 +399,7 @@ export default function App() {
           <div ref={newsScrollRef} className="flex gap-[16px] md:gap-[24px] overflow-x-auto pl-[8.33vw] pr-[8.33vw] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] snap-x snap-mandatory md:snap-none">
             {articles.map((item, i) => (
               <Link key={i} to={`/news/${item.slug}`} className="no-underline">
-                <article className="group relative border border-[#B3ABAB] w-[calc(100vw-16.66vw)] sm:w-[340px] md:w-[380px] lg:w-[461px] h-[520px] md:h-[640px] shrink-0 pt-[60px] md:pt-[84px] pb-[40px] md:pb-[50px] px-[24px] md:px-[40px] flex flex-col justify-between cursor-pointer transition-all duration-500 hover:bg-black hover:border-black snap-start">
+                <article className="group relative border border-[#B3ABAB] w-[calc(100vw-16.66vw)] sm:w-[340px] md:w-[380px] lg:w-[461px] 2xl:w-[540px] 3xl:w-[680px] h-[520px] md:h-[640px] 2xl:h-[720px] 3xl:h-[860px] shrink-0 pt-[60px] md:pt-[84px] pb-[40px] md:pb-[50px] px-[24px] md:px-[40px] 2xl:px-[50px] flex flex-col justify-between cursor-pointer transition-all duration-500 hover:bg-black hover:border-black snap-start">
                   <div className="absolute left-[-1px] top-[65px] md:top-[89px] w-[3px] h-[85px] bg-[#ADD54D]"></div>
                   <div>
                     <p className="font-normal text-[12px] text-[#898989] tracking-[1px] uppercase mb-[16px] md:mb-[20px] transition-colors duration-500 group-hover:text-[#898989]">
@@ -429,7 +429,7 @@ export default function App() {
         {/* Footer Green Line */}
         <div className="absolute left-[0] top-[580px] w-[10px] h-[663px] bg-[#ADD54D] hidden xl:block"></div>
 
-        <div className="max-w-[1920px] mx-auto px-[8.33vw] relative z-10">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw] relative z-10">
 
           {/* Top row: logo left, nav + email right */}
           <div className="flex flex-col md:flex-row items-start justify-between mb-[80px] md:mb-[180px] gap-[40px] md:gap-0">

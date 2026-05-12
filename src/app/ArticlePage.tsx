@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router";
 import svgPaths from "../imports/1920W/svg-gj00paujwo";
 import { articles } from "./data/articles";
@@ -8,6 +8,7 @@ export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const headerVisible = useHeaderVisibility();
+  const [menuOpen, setMenuOpen] = useState(false);
   const article = articles.find((a) => a.slug === slug);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ export default function ArticlePage() {
         className="fixed top-0 left-0 right-0 z-50 bg-[#F9F9F8]/80 backdrop-blur-md transition-transform duration-500"
         style={{ transform: headerVisible ? "translateY(0)" : "translateY(-100%)" }}
       >
-        <div className="max-w-[1920px] mx-auto px-[8.33vw] h-[100px] flex items-center justify-between">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw] h-[72px] md:h-[100px] flex items-center justify-between">
           <Link to="/" className="w-[32px] h-[36px] relative">
             <svg
               className="w-full h-full"
@@ -62,7 +63,8 @@ export default function ArticlePage() {
             </svg>
           </Link>
 
-          <nav className="flex gap-[40px] items-center mt-2">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex gap-[40px] items-center mt-2">
             {["about", "portfolio", "news", "contact"].map((id) => (
               <button
                 key={id}
@@ -79,11 +81,45 @@ export default function ArticlePage() {
               </button>
             ))}
           </nav>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden flex flex-col justify-center items-center w-[32px] h-[32px] bg-transparent border-none cursor-pointer p-0 gap-[6px]"
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-[22px] h-[2px] bg-[#111318] rounded-full transition-all duration-300 ${menuOpen ? "translate-y-[8px] rotate-45" : ""}`} />
+            <span className={`block w-[22px] h-[2px] bg-[#111318] rounded-full transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-[22px] h-[2px] bg-[#111318] rounded-full transition-all duration-300 ${menuOpen ? "-translate-y-[8px] -rotate-45" : ""}`} />
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`md:hidden absolute top-full left-0 right-0 bg-[#F9F9F8]/95 backdrop-blur-md border-t border-[#E5E5E5] transition-all duration-300 ${menuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-[10px]"}`}
+        >
+          <nav className="flex flex-col px-[8.33vw] py-[32px] gap-[24px]">
+            {["about", "portfolio", "news", "contact"].map((id) => (
+              <button
+                key={id}
+                onClick={() => {
+                  setMenuOpen(false);
+                  navigate("/");
+                  setTimeout(() => {
+                    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                }}
+                className="font-semibold text-[14px] text-[#111318] tracking-[0.52px] uppercase cursor-pointer bg-transparent border-none p-0 text-left hover:text-[#ADD54D] transition-colors"
+              >
+                {id}
+              </button>
+            ))}
+          </nav>
         </div>
       </header>
 
       {/* Article Content */}
-      <article className="max-w-[1920px] mx-auto px-[8.33vw] pt-[180px] pb-[160px]">
+      <article className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw] pt-[120px] md:pt-[180px] pb-[80px] md:pb-[160px]">
         {/* Back link */}
         <button
           onClick={() => {
@@ -92,28 +128,28 @@ export default function ArticlePage() {
               document.getElementById("news")?.scrollIntoView();
             }, 100);
           }}
-          className="inline-flex items-center gap-[10px] font-medium text-[14px] text-[#898989] tracking-[0.5px] uppercase hover:text-[#111318] transition-colors mb-[80px] cursor-pointer bg-transparent border-none p-0"
+          className="inline-flex items-center gap-[10px] font-medium text-[13px] md:text-[14px] text-[#898989] tracking-[0.5px] uppercase hover:text-[#111318] transition-colors mb-[40px] md:mb-[80px] cursor-pointer bg-transparent border-none p-0"
         >
-          <svg className="w-[16px] h-[12px] -scale-x-100" fill="none" viewBox="0 0 18 14">
+          <svg className="w-[14px] h-[10px] md:w-[16px] md:h-[12px] -scale-x-100" fill="none" viewBox="0 0 18 14">
             <path d={svgPaths.p3ce95c58} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeMiterlimit="10" strokeWidth="1.5" />
           </svg>
           Back to News
         </button>
 
         {/* Article header */}
-        <div className="max-w-[900px]">
-          <p className="font-normal text-[12px] text-[#898989] tracking-[1px] uppercase mb-[30px]">
+        <div className="max-w-full md:max-w-[900px] 2xl:max-w-[1100px] 3xl:max-w-[1400px]">
+          <p className="font-normal text-[12px] text-[#898989] tracking-[1px] uppercase mb-[20px] md:mb-[30px]">
             {article.date}
           </p>
 
           <div className="relative">
-            <div className="absolute left-[-30px] top-[4px] w-[3px] h-[85px] bg-[#ADD54D]"></div>
-            <h1 className="font-bold text-[42px] text-[#111318] leading-[1.25] tracking-[-1.2px] mb-[60px]">
+            <div className="absolute left-[-16px] md:left-[-30px] top-[4px] w-[3px] h-[60px] md:h-[85px] bg-[#ADD54D]"></div>
+            <h1 className="font-bold text-[28px] md:text-[42px] 2xl:text-[52px] 3xl:text-[64px] text-[#111318] leading-[1.25] tracking-[-0.8px] md:tracking-[-1.2px] mb-[40px] md:mb-[60px]">
               {article.title}
             </h1>
           </div>
 
-          <div className="font-normal text-[18px] text-[#111318] leading-[30px] tracking-[-0.17px] space-y-[30px]">
+          <div className="font-normal text-[16px] md:text-[18px] 2xl:text-[20px] 3xl:text-[24px] text-[#111318] leading-[26px] md:leading-[30px] 2xl:leading-[32px] 3xl:leading-[38px] tracking-[-0.17px] space-y-[24px] md:space-y-[30px]">
             {article.body.split("\n\n").map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
             ))}
@@ -121,16 +157,16 @@ export default function ArticlePage() {
         </div>
 
         {/* Prev / Next navigation */}
-        <div className="border-t border-[#B3ABAB] mt-[120px] pt-[60px] flex justify-between items-start">
+        <div className="border-t border-[#B3ABAB] mt-[60px] md:mt-[120px] pt-[40px] md:pt-[60px] flex flex-col sm:flex-row justify-between items-start gap-[30px] sm:gap-0">
           {prevArticle ? (
             <Link
               to={`/news/${prevArticle.slug}`}
-              className="group flex flex-col gap-[12px] max-w-[400px]"
+              className="group flex flex-col gap-[8px] md:gap-[12px] max-w-[300px] md:max-w-[400px]"
             >
               <span className="font-normal text-[12px] text-[#898989] tracking-[1px] uppercase group-hover:text-[#111318] transition-colors">
                 ← Previous
               </span>
-              <span className="font-bold text-[18px] text-[#111318] leading-[1.4] group-hover:text-[#ADD54D] transition-colors">
+              <span className="font-bold text-[16px] md:text-[18px] 2xl:text-[20px] text-[#111318] leading-[1.4] group-hover:text-[#ADD54D] transition-colors">
                 {prevArticle.title}
               </span>
             </Link>
@@ -140,12 +176,12 @@ export default function ArticlePage() {
           {nextArticle ? (
             <Link
               to={`/news/${nextArticle.slug}`}
-              className="group flex flex-col gap-[12px] max-w-[400px] text-right items-end"
+              className="group flex flex-col gap-[8px] md:gap-[12px] max-w-[300px] md:max-w-[400px] sm:text-right sm:items-end"
             >
               <span className="font-normal text-[12px] text-[#898989] tracking-[1px] uppercase group-hover:text-[#111318] transition-colors">
                 Next →
               </span>
-              <span className="font-bold text-[18px] text-[#111318] leading-[1.4] group-hover:text-[#ADD54D] transition-colors">
+              <span className="font-bold text-[16px] md:text-[18px] 2xl:text-[20px] text-[#111318] leading-[1.4] group-hover:text-[#ADD54D] transition-colors">
                 {nextArticle.title}
               </span>
             </Link>
@@ -156,16 +192,16 @@ export default function ArticlePage() {
       </article>
 
       {/* Footer */}
-      <footer className="bg-black pt-[100px] pb-[80px]">
-        <div className="max-w-[1920px] mx-auto px-[8.33vw]">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-[#5F5F5F] pt-[40px]">
+      <footer className="bg-black pt-[60px] md:pt-[100px] pb-[60px] md:pb-[80px]">
+        <div className="max-w-[1920px] 2xl:max-w-[2560px] 3xl:max-w-[3840px] mx-auto px-[8.33vw]">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-[#5F5F5F] pt-[30px] md:pt-[40px] gap-[16px] md:gap-0">
             <a
               href="mailto:opportunity@biorockventures.com"
-              className="font-normal text-[18px] text-[#ADD54D] tracking-[-0.17px] hover:opacity-80 transition-colors"
+              className="font-normal text-[16px] md:text-[18px] 2xl:text-[20px] text-[#ADD54D] tracking-[-0.17px] hover:opacity-80 transition-colors"
             >
               opportunity@biorockventures.com
             </a>
-            <p className="font-normal text-[14px] text-[#F9F9F8] tracking-[1.44px] mt-4 md:mt-0">
+            <p className="font-normal text-[12px] md:text-[14px] text-[#F9F9F8] tracking-[1px] md:tracking-[1.44px]">
               © 2026 BioRock Ventures. All rights reserved.
             </p>
           </div>
