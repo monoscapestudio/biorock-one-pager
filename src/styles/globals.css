@@ -31,3 +31,12 @@
 .nav-flip-btn:hover::after {
   transform: translateY(-100%);
 }
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(5px); opacity: 0.4; }
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 1.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}

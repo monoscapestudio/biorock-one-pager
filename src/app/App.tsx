@@ -172,7 +172,7 @@ export default function App() {
           {/* Hero Vertical Line & Scroll Icon */}
           <div className="absolute left-[calc(8.33vw+2px)] top-[659px] w-[1px] h-[199px] bg-black hidden xl:block"></div>
           <div className="absolute left-[calc(8.33vw-4px)] top-[886px] w-[13px] h-[21px] rounded-full border border-black hidden xl:flex items-start justify-center pt-[4px]">
-            <div className="w-[1px] h-[6px] bg-black"></div>
+            <div className="w-[1px] h-[6px] bg-black animate-scroll-hint"></div>
           </div>
 
           {/* Hero Image */}
