@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router";
 import svgPaths from "../imports/1920W/svg-gj00paujwo";
-import imgStone from "../imports/1920W/4a53b62fcb94d1a91e54e801b77c84c7678f6101.png";
+import imgStone from "../imports/1920W/stone_ver2.png";
 import imgTeam from "../imports/1920W/788436aa4cc14bb18ebe0810bd83a50d76289502.png";
 import { articles } from "./data/articles";
 import { useHeaderVisibility } from "./hooks/useHeaderVisibility";
@@ -125,7 +125,7 @@ export default function App() {
           </div>
 
           {/* Hero Image */}
-          <div ref={heroImageRef} className="absolute right-[3.16vw] top-[77px] w-[825px] h-[825px] z-0 will-change-transform">
+          <div ref={heroImageRef} className="absolute right-[3.16vw] top-[127px] w-[660px] h-[660px] z-0 will-change-transform">
             <img
               src={imgStone}
               alt="Polished Stone"
@@ -140,9 +140,9 @@ export default function App() {
         <div className="max-w-[1920px] mx-auto relative pt-[120px]">
           
           {/* Top About Text */}
-          <div className="flex flex-col lg:flex-row px-[8.33vw] justify-between">
+          <div className="flex flex-col lg:flex-row px-[8.33vw] justify-between mt-[50px]">
             <div className="w-full lg:w-[45%]">
-              <p className="font-normal text-[16px] text-[#F9F9F8] tracking-[1.44px] uppercase mb-[270px]">
+              <p className="font-normal text-[16px] text-[#F9F9F8] tracking-[1.44px] uppercase mb-[370px]">
                 ABOUT
               </p>
               <p className="font-normal text-[18px] text-[#F9F9F8] leading-[27.2px] tracking-[-0.17px] max-w-[784px]">
@@ -177,7 +177,7 @@ export default function App() {
                 <h3 className="font-semibold text-[232.6px] text-white leading-[0.88] tracking-[0.32px] m-0">
                   Mary Wheeler
                 </h3>
-                <p className="font-semibold text-[232.6px] text-[#2f2f2f] leading-[0.88] tracking-[0.32px] m-0">
+                <p className="font-semibold text-[232.6px] text-[#2f2f2f] leading-[0.88] tracking-[0.32px] m-0 whitespace-nowrap">
                   PhD, MBA
                 </p>
               </div>
